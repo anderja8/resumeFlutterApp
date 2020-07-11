@@ -5,6 +5,6 @@ class BusinessCardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Business Card Page');
+    return Image.asset('assets/gru_headshot.jpg');
   }
 }
