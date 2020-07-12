@@ -6,20 +6,26 @@ class BusinessCardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Expanded(
+        child: Column(
       children: [
-        SizedBox(
-          width: 300,
-          height: 300,
-          child: Image.asset('assets/gru_headshot.jpg'),
-        ),
+        sizedImage('assets/gru_headshot.jpg'),
         Text(name),
         Text(role),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [Text(phone), Text(website)],
         )
       ],
-    );
+    ));
   }
+}
+
+Widget sizedImage(String imgLocation) {
+  return Flexible(
+      child: FractionallySizedBox(
+    widthFactor: 0.7,
+    heightFactor: 0.7,
+    child: Image.asset(imgLocation),
+  ));
 }

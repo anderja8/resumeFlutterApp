@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-import 'NavController.dart';
+import 'package:flutter/services.dart';
+import 'App.dart';
 
 void main() {
-  runApp(ResumeApp());
-}
-
-class ResumeApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Call Me Maybe',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: NavController());
-  }
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(App());
 }

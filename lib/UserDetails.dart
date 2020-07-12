@@ -28,7 +28,7 @@ final List<PriorWorkDetails> priorWorkList = [
           ' Directed nefarious activities of thousands of evil, bright yellow' +
           ' minions. Most famous for stealing, and then returning, the moon.'),
   PriorWorkDetails(
-      title: 'Primary Evil Doer (senator)',
+      title: 'Senator',
       company: 'US Senate',
       datesActive: 'Jan 02 - Jan 08',
       location: 'Florida',
