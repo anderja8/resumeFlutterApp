@@ -6,7 +6,8 @@ class ResumePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+        child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ResumeHeader(),
@@ -18,7 +19,7 @@ class ResumePage extends StatelessWidget {
               location: priorWork.location,
               description: priorWork.description)
       ],
-    );
+    ));
   }
 }
 
