@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'UserDetails.dart';
+import '../UserDetails.dart';
 
 class ResumePage extends StatelessWidget {
   ResumePage({Key key}) : super(key: key);

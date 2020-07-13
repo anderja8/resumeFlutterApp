@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'BusinessCardPage.dart';
-import 'ResumePage.dart';
-import 'CallBackGuessPage.dart';
+import 'screens/BusinessCardPage.dart';
+import 'screens/ResumePage.dart';
+import 'screens/CallBackGuessPage.dart';
 
 // This class will control the nav bar and ensure the right
 // page gets loaded.
@@ -13,27 +13,31 @@ class NavController extends StatefulWidget {
   _NavControllerState createState() => _NavControllerState();
 }
 
+Widget iconTab(IconData icon) {
+  return Tab(icon: Icon(icon));
+}
+
+final tabs = [
+  iconTab(Icons.face),
+  iconTab(Icons.library_books),
+  iconTab(Icons.help),
+];
+
+final screens = [
+  BusinessCardPage(),
+  ResumePage(),
+  CallBackGuessPage(),
+];
+
 class _NavControllerState extends State<NavController> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: tabs.length,
+        initialIndex: 0,
         child: Scaffold(
             appBar: AppBar(
-                title: Text('Call Me Maybe'),
-                bottom: TabBar(tabs: [
-                  iconTab(Icons.face),
-                  iconTab(Icons.library_books),
-                  iconTab(Icons.help),
-                ])),
-            body: TabBarView(children: [
-              BusinessCardPage(),
-              ResumePage(),
-              CallBackGuessPage(),
-            ])));
+                title: Text('Call Me Maybe'), bottom: TabBar(tabs: tabs)),
+            body: TabBarView(children: screens)));
   }
-}
-
-Widget iconTab(IconData icon) {
-  return Tab(icon: Icon(icon));
 }
