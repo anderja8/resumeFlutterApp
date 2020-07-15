@@ -10,18 +10,19 @@ class CallBackGuessPage extends StatefulWidget {
 class _CallBackGuessPageState extends State<CallBackGuessPage> {
   CallBackGuesser cbg = CallBackGuesser();
 
+  @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Text('Call me ... Maybe'),
-      Text('Ask a question ... Tap for the answer'),
       GestureDetector(
-          onTap: () {
-            setState(() {
-              cbg.setAnswer();
-            });
-          },
-          child: Text('${cbg.answer}') //Text('${cbg.answer}'),
-          )
+        onTap: () {
+          setState(() {
+            cbg.setAnswer();
+          });
+        },
+        child: Text('Ask a question ... Tap for the answer'),
+      ),
+      Text('${cbg.answer}')
     ]);
   }
 }
