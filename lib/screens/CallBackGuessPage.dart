@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:resumeFlutterApp/models/CallBackGuesser.dart';
+import 'package:resumeFlutterApp/screens/BusinessCardPage.dart';
 import '../models/CallBackGuesser.dart';
+import '../styles.dart';
 
 class CallBackGuessPage extends StatefulWidget {
   @override
@@ -13,16 +15,17 @@ class _CallBackGuessPageState extends State<CallBackGuessPage> {
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text('Call me ... Maybe'),
+      paddedText('Call me ... Maybe', Styles.standardTextStyle),
       GestureDetector(
         onTap: () {
           setState(() {
             cbg.setAnswer();
           });
         },
-        child: Text('Ask a question ... Tap for the answer'),
+        child: paddedText(
+            'Ask a question ... Tap for the answer', Styles.standardTextStyle),
       ),
-      Text('${cbg.answer}')
+      paddedText('${cbg.answer}', Styles.standardTextStyle)
     ]);
   }
 }

@@ -49,7 +49,8 @@ final List<PriorWorkDetails> priorWorkList = [
       datesActive: 'June 93 - July 97',
       location: 'California',
       description: 'Performed menial evil tasks such as ' +
-          'unplugging lamps, telling dogs to chew shoes, datamining customers, and hiding keys.'),
+          'unplugging lamps, telling dogs to chew shoes, datamining customers, and hiding keys.' +
+          'Planted the idea of the Comic Sans font at Microsoft.'),
   PriorWorkDetails(
       title: 'Underling',
       company: 'Monsanto',

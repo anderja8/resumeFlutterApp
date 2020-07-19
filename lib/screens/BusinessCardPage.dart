@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../UserDetails.dart';
+import '../styles.dart';
 
 class BusinessCardPage extends StatelessWidget {
   BusinessCardPage({Key key}) : super(key: key);
@@ -11,8 +12,8 @@ class BusinessCardPage extends StatelessWidget {
         child: Column(
       children: [
         sizedImage('assets/images/gru_headshot.jpg'),
-        Text(name),
-        Text(role),
+        paddedText(name, Styles.largeBoldedTextStyle),
+        paddedText(role, Styles.boldedTextStyle),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -39,7 +40,7 @@ Widget tappableText(String text, Function tapHandler, String tapArg) {
     onTap: () {
       tapHandler(tapArg);
     },
-    child: Text(text),
+    child: paddedText(text, Styles.standardTextStyle),
   );
 }
 
@@ -49,4 +50,9 @@ _launchWrapper(String url) async {
   } else {
     throw 'Could not launch $url';
   }
+}
+
+Widget paddedText(String text, TextStyle textStyle) {
+  return Padding(
+      padding: EdgeInsets.all(3.0), child: Text(text, style: textStyle));
 }

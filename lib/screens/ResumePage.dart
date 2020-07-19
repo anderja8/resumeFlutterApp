@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../UserDetails.dart';
+import '../styles.dart';
 
 class ResumePage extends StatelessWidget {
   ResumePage({Key key}) : super(key: key);
@@ -28,9 +29,9 @@ class ResumeHeader extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.all(10),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(name),
-          Text(email),
-          Text(website),
+          Text(name, style: Styles.boldedTextStyle),
+          Text(email, style: Styles.standardTextStyle),
+          Text(website, style: Styles.standardTextStyle),
         ]));
   }
 }
@@ -52,10 +53,10 @@ class ResumeEntry extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title),
+            Text(title, style: Styles.boldedTextStyle),
             ResumeEntryDetails(
                 company: company, datesActive: datesActive, location: location),
-            Text(description)
+            Text(description, style: Styles.standardTextStyle)
           ],
         ));
   }
@@ -69,12 +70,17 @@ class ResumeEntryDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       Expanded(
-          child: Align(alignment: Alignment.centerLeft, child: Text(company))),
+          child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(company, style: Styles.smallTextStyle))),
       Expanded(
-          child: Align(alignment: Alignment.center, child: Text(datesActive))),
+          child: Align(
+              alignment: Alignment.center,
+              child: Text(datesActive, style: Styles.smallTextStyle))),
       Expanded(
-          child:
-              Align(alignment: Alignment.centerRight, child: Text(location))),
+          child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(location, style: Styles.smallTextStyle))),
     ]);
   }
 }

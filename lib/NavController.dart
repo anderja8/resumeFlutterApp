@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/BusinessCardPage.dart';
 import 'screens/ResumePage.dart';
 import 'screens/CallBackGuessPage.dart';
+import 'styles.dart';
 
 // This class will control the nav bar and ensure the right
 // page gets loaded.
@@ -37,7 +38,10 @@ class _NavControllerState extends State<NavController> {
         initialIndex: 0,
         child: Scaffold(
             appBar: AppBar(
-                title: Text('Call Me Maybe'), bottom: TabBar(tabs: tabs)),
+              title: Text('Call Me Maybe', style: Styles.standardTextStyle),
+              bottom: TabBar(tabs: tabs),
+              backgroundColor: Colors.blueGrey[800],
+            ),
             body: TabBarView(children: screens)));
   }
 }
